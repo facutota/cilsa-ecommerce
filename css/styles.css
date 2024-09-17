@@ -7,6 +7,9 @@ body {
     gap: 0.41vw;
     background: rgb(11, 52, 52);
 }
+h2{
+    color: wheat;
+}
 
 nav {
     width: 95%;
