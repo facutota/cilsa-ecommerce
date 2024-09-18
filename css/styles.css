@@ -20,6 +20,10 @@ header {
 nav {
     width: 95%;
 }
+header img{
+  border: red 2px solid;
+  height: 4vw;
+}
 #destacados{
     padding-top: 7vw;
 
