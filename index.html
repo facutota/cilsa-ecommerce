@@ -28,17 +28,28 @@
         <li class="nav-item">
           <a class="nav-link active text-white" aria-current="page" href="#destacados">Inicio</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="#productos">Productos</a>
+
+        <!-- Menú desplegable Productos -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Productos
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#todos">Todos</a></li>
+            <li><a class="dropdown-item" href="#aereos">Aereos</a></li>
+            <li><a class="dropdown-item" href="#acuaticos">Acuaticos</a></li>
+            <li><a class="dropdown-item" href="#terrestres">Terrestres</a></li>
+          </ul>
         </li>
+
         <li class="nav-item">
           <a class="nav-link text-white" href="#contacto">Contacto</a>
         </li>
       </ul>
-
     </div>
   </div>
 </nav>
+
 
 </header>
 <h2 id="destacados">
@@ -60,15 +71,44 @@
 </div>
 </div >
 
+<!-- Cards -->
 
-<h2 id="productos">
-  TODOS LOS PRODUCTOS
+<h2 id="todos">
+  Todos los vehiculos
+</h2>
+<div class="cards">
+<div class="container mt-4">
+  <div class="row" id="cards-container">
+  </div>
+</div>
+</div>
+<!-- Aereos -->
+<h2 id="aereos">
+  Vehiculos Aereos
+</h2>
+<div class="cards">
+<div class="container mt-4">
+  <div class="row justify-content-center" id="cards-container-aereos">
+  </div>
+</div>
+</div>
+<h2 id="acuaticos">
+  Vehiculos Acuaticos
+</h2>
+<div class="cards">
+<div class="container mt-4">
+  <div class="row justify-content-center" id="cards-container-acuaticos">
+  </div>
+</div>
+</div>
+
+<h2 id="terrestres">
+  Vehiculos Terrestres
 </h2>
 <!-- Cards -->
 <div class="cards">
 <div class="container mt-4">
-  <div class="row" id="cards-container">
-    <!-- Aquí se insertarán las tarjetas dinámicamente -->
+  <div class="row justify-content-center" id="cards-container-terrestres">
   </div>
 </div>
 </div>

@@ -8,27 +8,19 @@ body {
 h2{
     color: wheat;
 }
+header{
+  width: 100%;
+  height: auto;
+  position: fixed; 
+  top: 0; 
+  z-index: 1000; 
 
-header {
-    position: fixed; 
-    top: 0; 
-    width: 95%; 
-    z-index: 1000; 
-    padding: 0.5rem 1rem; 
-    height: 6vw;
-}
-nav {
-    width: 95%;
-}
-header img{
-  border: red 2px solid;
-  height: 4vw;
 }
 #destacados{
     padding-top: 7vw;
 
 }
-#productos{
+#todos, #aereos, #acuaticos, #terrestres{
     padding-top: 6vw;
 
 }
@@ -86,7 +78,10 @@ header img{
   .card-title, .card-text, .btn {
     margin-bottom: 10px;
   }
-  
+
+  .alto-card{
+    height: 30vw;
+  }
 
   footer{
     width: 100%;
