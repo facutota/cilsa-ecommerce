@@ -10,12 +10,12 @@
     <link rel="stylesheet" href="/cilsa-ecommerce/css/styles.css">
 </head>
 <body>
-
+<header class="bg-dark"  >
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <!-- Logo -->
-    <a class="navbar-brand" href="index.html">Mi E-commerce</a>
+    <a class="navbar-brand text-uppercase font-weight-bold" href="index.html">Vendemos vehículos</a>
 
     <!-- Botón de menú móvil -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,30 +24,24 @@
 
     <!-- Enlaces del menú -->
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+          <a class="nav-link active text-white" aria-current="page" href="#destacados">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="products.html">Productos</a>
+          <a class="nav-link text-white" href="#productos">Productos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="cart.html">Carrito</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contact.html">Contacto</a>
+          <a class="nav-link text-white" href="#contacto">Contacto</a>
         </li>
       </ul>
 
-      <!-- Buscador o iconos de usuario/carrito -->
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Buscar productos" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Buscar</button>
-      </form>
     </div>
   </div>
 </nav>
-<h2>
+
+</header>
+<h2 id="destacados">
   PRODUCTOS DESTACADOS
 </h2>
 <!-- Slider -->
@@ -64,9 +58,10 @@
     <span class="visually-hidden">Siguiente</span>
   </button>
 </div>
-</div>
+</div >
 
-<h2>
+
+<h2 id="productos">
   TODOS LOS PRODUCTOS
 </h2>
 <!-- Cards -->
@@ -77,6 +72,28 @@
   </div>
 </div>
 </div>
+
+<footer class="bg-dark text-white pt-5 pb-4" id="contacto">
+  <div class="container text-center text-md-left">
+    <div class="row text-center text-md-left">
+      <!-- Columna de descripción -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 font-weight-bold">Alumnos</h5>
+        <p>Juarez Verónica</p>
+        <p>Medina Carranza Facundo Martin</p>
+        <p>Quevedo Francisco</p>
+        <p>Zubillaga Javier</p>
+          
+      </div>
+    </div>
+    <hr class="mb-4">
+    
+    <div class="row align-items-center">
+          <a href="https://www.cilsa.org/" class="text-white"><strong> CILSA.ORG</strong></a>
+    </div>
+  </div>
+</footer>
+
 
 <!-- Bootstrap JS y Popper.js CDN -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>

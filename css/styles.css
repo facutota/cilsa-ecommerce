@@ -1,18 +1,32 @@
-/* Estilos generales de la pagina web */
 body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 0.41vw;
     background: rgb(11, 52, 52);
 }
 h2{
     color: wheat;
 }
 
+header {
+    position: fixed; 
+    top: 0; 
+    width: 95%; 
+    z-index: 1000; 
+    padding: 0.5rem 1rem; 
+    height: 6vw;
+}
 nav {
     width: 95%;
+}
+#destacados{
+    padding-top: 7vw;
+
+}
+#productos{
+    padding-top: 6vw;
+
 }
 
 .slider {
@@ -24,27 +38,52 @@ nav {
     width: 1200px;
     height: 400px;
 }
+  .custom-caption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para mejor legibilidad */
+    padding: 1rem; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+  }
+
+  .custom-caption h5,
+  .custom-caption p {
+    color: #f8f9fa; 
+    font-size: 1.25rem; 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); 
+  }
+
+  .custom-caption p {
+    margin: 0; 
+  }
+
 
 .cards {
     width: 100%;
 }
 .card {
     width: 100%;
-    height: 400px; /* Fija una altura para todas las tarjetas */
+    height: 400px; 
   }
   
   .card-img-top {
-    height: 200px; /* Controla la altura de la imagen */
-    object-fit: cover; /* Asegura que la imagen mantenga su proporción */
+    height: 200px; 
+    object-fit: cover; 
   }
   
   .card-body {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Para distribuir uniformemente el contenido */
+    justify-content: space-between;
   }
   
   .card-title, .card-text, .btn {
     margin-bottom: 10px;
   }
   
+
+  footer{
+    width: 100%;
+  }
