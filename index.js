@@ -184,13 +184,15 @@ function insertarCards() {
 
   vehiculosArray.forEach(([key, vehicle]) => {
     const cardHTML = `
-    <div class="col-md-2">
+    <div class="col-md-5 col-sm-12 col-lg-2">
       <div class="card mb-4 bg-dark text-light alto-card">
         <img src="${vehicle.imagen}" class="card-img-top" alt="${vehicle.nombre}">
         <div class="card-body">
           <h5 class="card-title">${vehicle.nombre}</h5>
-          <p class="card-text">Año: ${vehicle.año}</p>
-          <p class="card-text">Precio: $${vehicle.precio.toLocaleString()}</p>
+          <ul class="list-group-item list-group-flush">
+            <li class="list-group-item">Año: ${vehicle.año}</li>
+            <li class="list-group-item">Precio: $${vehicle.precio.toLocaleString()}</li>
+          </ul>
           <a href="#" class="btn btn-secondary">Ver más</a>
         </div>
       </div>
@@ -216,9 +218,11 @@ function insertarCardsAereos() {
           <img src="${vehicle.imagen}" class="card-img-top" alt="${vehicle.nombre}">
           <div class="card-body">
             <h5 class="card-title">${vehicle.nombre}</h5>
-            <p class="card-text">Año: ${vehicle.año}</p>
-            <p class="card-text">Precio: $${vehicle.precio.toLocaleString()}</p>
-            <a href="#" class="btn btn-secondary">Ver más</a>
+            <ul class="list-group-item list-group-flush">
+              <li class="list-group-item">Año: ${vehicle.año}</li>
+              <li class="list-group-item">Precio: $${vehicle.precio.toLocaleString()}</li>
+            </ul>
+          <a href="#" class="btn btn-secondary">Ver más</a>
           </div>
         </div>
       </div>
@@ -245,9 +249,10 @@ function insertarCardsAcuaticos() {
           <img src="${vehicle.imagen}" class="card-img-top" alt="${vehicle.nombre}">
           <div class="card-body">
             <h5 class="card-title">${vehicle.nombre}</h5>
-            <p class="card-text">Año: ${vehicle.año}</p>
-            <p class="card-text">Precio: $${vehicle.precio.toLocaleString()}</p>
-            <a href="#" class="btn btn-secondary">Ver más</a>
+            <ul class="list-group-item list-group-flush">
+              <li class="list-group-item">Año: ${vehicle.año}</li>
+              <li class="list-group-item">Precio: $${vehicle.precio.toLocaleString()}</li>
+            </ul><a href="#" class="btn btn-secondary">Ver más</a>
           </div>
         </div>
       </div>
@@ -274,8 +279,10 @@ function insertarCardsTerrestres() {
           <img src="${vehicle.imagen}" class="card-img-top" alt="${vehicle.nombre}">
           <div class="card-body">
             <h5 class="card-title">${vehicle.nombre}</h5>
-            <p class="card-text">Año: ${vehicle.año}</p>
-            <p class="card-text">Precio: $${vehicle.precio.toLocaleString()}</p>
+            <ul class="list-group-item list-group-flush">
+              <li class="list-group-item">Año: ${vehicle.año}</li>
+              <li class="list-group-item">Precio: $${vehicle.precio.toLocaleString()}</li>
+            </ul>
             <a href="#" class="btn btn-secondary">Ver más</a>
           </div>
         </div>
