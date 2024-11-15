@@ -1,8 +1,5 @@
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  
   background: rgb(11, 52, 52);
 }
 h2{

@@ -1,4 +1,15 @@
-const vehiculos = {
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App'; 
+
+const root = ReactDOM.createRoot(document.getElementById('app'));
+root.render(
+    
+        <App /> 
+   
+);
+
+/* const vehiculos = {
   auto: {
     nombre: "Mercedes Benz ABC",
     año: 2024,
@@ -332,4 +343,4 @@ function insertarCardsTerrestres() {
   });
 }
 insertarCardsTerrestres();
-
+ */
