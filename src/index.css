@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: rgb(11, 52, 52);
+}
+h1{
+  color: white;
+}
+h2 {
+  color: wheat;
+}
+footer {
+  width: 100%;
+}
+

@@ -111,10 +111,8 @@ const Home = () => {
                         {/* Columna de descripción */}
                         <div className="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                             <h5 className="text-uppercase mb-4 font-weight-bold">Alumnos</h5>
-                            <p>Juarez Verónica</p>
                             <p>Medina Carranza Facundo Martin</p>
                             <p>Quevedo Francisco</p>
-                            <p>Zubillaga Javier</p>
                         </div>
                     </div>
                     <hr className="mb-4" />
