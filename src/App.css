@@ -8,14 +8,12 @@ header {
 
 #destacados {
   margin-top: 4em;
+  height: auto;
+  
 }
 
-.slider {
-  width: 90vw;
-}
-
-.slider .img-slider {
-  object-fit: cover;
+#buttonwapp {
+  justify-self: end;
 }
 
 .custom-caption {
@@ -38,3 +36,4 @@ header {
 .custom-caption p {
   margin: 0; 
 }
+

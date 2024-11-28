@@ -50,7 +50,7 @@ export function FormApp() {
             },
             body: JSON.stringify({
               ...values,
-              _cc: 'automotoresdongregorio@hotmail.com' // Dirección de correo electrónico de CC
+              //cc: 'automotoresdongregorio@hotmail.com' // Dirección de correo electrónico de CC
             }),
           });
 
@@ -98,6 +98,7 @@ export function FormApp() {
               className: 'text-white' // Aplica estilos usando clases de Tailwind
             }}
           />
+          <br />
           <Field className='m-2 w-full'
             component={TextField}
             name="phone"

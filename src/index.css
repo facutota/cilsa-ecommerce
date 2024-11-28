@@ -2,16 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+  height: 100%; /* Asegura que el html y el body ocupen el 100% de la altura */
+  margin: 0; /* Elimina el margen por defecto */
+  width: auto;
+}
+
 body {
   background: rgb(11, 52, 52);
+  display: flex; /* Establece el body como un flexbox */
+    flex-direction: column;
 }
-h1{
+
+main {
+  flex: 1; /* Permite que el main ocupe el espacio disponible */
+}
+
+footer {
+  width: 100%; /* Asegura que el footer ocupe todo el ancho */
+  background: rgb(11, 52, 52); /* Color de fondo del footer */
+  color: white; /* Color del texto del footer */
+  text-align: center; /* Centra el texto */
+  padding: 1rem; /* Espaciado interno */
+}
+
+h1 {
   color: white;
+  margin-top: 80px;
 }
+
 h2 {
   color: wheat;
-}
-footer {
-  width: 100%;
 }
 

@@ -1,6 +1,5 @@
-'use client'
+import { Close, CloseFullscreen } from '@mui/icons-material';
 import React, { useState } from 'react';
-import { IoCloseCircle } from 'react-icons/io5';
 
 interface VideoPopupProps {
   videoSrc: string;
@@ -36,7 +35,7 @@ const VideoPopup: React.FC<VideoPopupProps> = ({ videoSrc, buttonText = 'Video S
               onClick={closePopup} 
               className="mt-2 text-gray-700 bg-white rounded-full"
             >
-              <IoCloseCircle size={30} />
+              <CloseFullscreen  />
             </button>
             <video controls className="w-full">
               <source src={videoSrc} type="video/mp4" />
