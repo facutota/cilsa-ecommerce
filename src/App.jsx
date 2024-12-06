@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -10,10 +10,16 @@ import Footer from './components/Footer';
 import Terrestres from './pages/productos/Terrestres';
 import Aereos from './pages/productos/Aereos';
 import Acuaticos from './pages/productos/Acuaticos';
+import Cart from './components/Cart'; 
 import './App.css'
 
 
 const App = () => {
+    const [cart, setCart] = useState([]); // Estado para el carrito
+
+    const addToCart = (product) => {
+        setCart((prevCart) => [...prevCart, product]); // Agrega el producto al carrito
+    };
     return (
         <Router>
             <div className="flex flex-col  "> {/* Asegúrate de que el contenedor principal ocupe toda la altura */}
@@ -24,9 +30,10 @@ const App = () => {
                         <Route path="/about" element={<About />} />
                         <Route path="/contacto" element={<Contacto />} />
                         <Route path="/productos/todos" element={<Todos />} />
-                        <Route path="/productos/aereos" element={<Aereos />} />
+                        <Route path="/productos/aereos" element={<Aereos addToCart={addToCart} />} />
                         <Route path="/productos/terrestres" element={<Terrestres />} />
                         <Route path="/productos/acuaticos" element={<Acuaticos />} />
+                        <Route path="/cart" element={<Cart cart={cart} />} />
                         <Route path="*" element={<NotFound />} />
                     </Routes>
                 </main>

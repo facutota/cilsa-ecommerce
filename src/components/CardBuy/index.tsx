@@ -12,9 +12,10 @@ import ShareIcon from '@mui/icons-material/Share';
 interface CardBuyProps {
   name: string;
   image: string;
+  addToCart: (product: { name: string; image: string }) => void; // Agregar la función addToCart
 }
 
-export default function CardBuy({ name, image }: CardBuyProps) {
+export default function CardBuy({ name, image, addToCart }: CardBuyProps) {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader    
@@ -38,7 +39,7 @@ export default function CardBuy({ name, image }: CardBuyProps) {
         <IconButton aria-label="share">
           <ShareIcon />
         </IconButton>
-        <button className="p-2 bg-green-500 text-white rounded hover:bg-green-600 transition duration-300">
+        <button className="button-comprar" onClick={() => addToCart({ name, image })}>
           Comprar
         </button>
       </CardActions>

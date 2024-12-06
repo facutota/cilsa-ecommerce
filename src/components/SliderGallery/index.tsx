@@ -1,6 +1,6 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, EffectFade, EffectCube } from 'swiper/modules';
+import { Navigation, Pagination, EffectFade, EffectCube, EffectCoverflow } from 'swiper/modules';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -21,29 +21,32 @@ const products: Product[] = [
   // Añade más productos según sea necesario
 ];
 
-const SliderGallery: React.FC = () => {
+const SliderGallery: React.FC<{ addToCart: (product: Product) => void }> = ({ addToCart }) => {
   return (
     <div className="w-full h-96 flex justify-center">
       <Swiper
-        modules={[Navigation, Pagination, EffectCube]}  // Añadir EffectFade a los módulos
-        slidesPerView={1}  // Para el efecto fade, debe ser 1
-        effect={'fade'}
-        cubeEffect={{
-          shadow: false,
-          slideShadows: false,
-          shadowOffset: 20,
-          shadowScale: 0.94,
+        effect={'coverflow'}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={'auto'}
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
         }}
-        navigation
-        pagination={{ clickable: false }}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log('slide change')}
-        style={{ width: '100%' }}
+        pagination={true}
+        modules={[EffectCoverflow, Pagination]}
+        className="mySwiper"
       >
         {products.map((product) => (
           <SwiperSlide key={product.id}>
-            <div className="product-slide flex flex-col items-center">
-              <img src={product.image} alt={product.name} style={{ width: '100%', height: '500px', objectFit: 'cover' }} />
+            <div className="product-slide flex flex-col items-center justify-center">
+              <img src={product.image} alt={product.name} style={{ width: '100%', height: '500px', objectFit: 'contain' }} />
+              <button className=" button-comprar" onClick={() => addToCart(product)}>
+                Comprar
+              </button>
             </div>
           </SwiperSlide>
         ))}
