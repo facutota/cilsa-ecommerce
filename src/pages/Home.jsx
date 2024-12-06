@@ -1,12 +1,12 @@
 import React from 'react';
-import ProductGallery from '../../src/components/ProductGallery'
+import SliderGallery from '../../src/components/SliderGallery'
 
 const Home = () => {
     return (
-        <div className='h-full'>
+        <div className='min-h-min'>
             <h2 id="destacados" className='text-red-500'>PRODUCTOS DESTACADOS</h2>
 
-            <ProductGallery />
+            <SliderGallery />
 
             {/* Cards */}
             <h2 id="todos">Todos los vehículos</h2>

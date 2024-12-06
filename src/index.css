@@ -12,6 +12,7 @@ body {
   background: rgb(11, 52, 52);
   display: flex; /* Establece el body como un flexbox */
     flex-direction: column;
+  height:100vh;
 }
 
 main {
