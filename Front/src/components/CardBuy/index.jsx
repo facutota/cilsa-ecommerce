@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
@@ -8,28 +8,21 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
+import useCartStore from '../../store/UseCartStore'; // Asegúrate de que la ruta sea correcta
 
-interface CardBuyProps {
-  name: string;
-  image: string;
-  addToCart: (product: { name: string; image: string }) => void; // Agregar la función addToCart
-}
+const CardBuy = ({ product }) => {
+  const addToCart = useCartStore((state) => state.addToCart); // Obtén la función addToCart
 
-export default function CardBuy({ name, image, addToCart }: CardBuyProps) {
   return (
     <Card sx={{ maxWidth: 345 }}>
-      <CardHeader    
-        title={name}
-      />
-      <CardMedia
-        component="img"
-        height="194"
-        image={image}
-        alt={name}
-      />
+      <CardHeader title={product.name} />
+      <CardMedia component="img" height="194" image={product.image} alt={product.name} />
       <CardContent>
         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
           Descripción del producto aquí.
+        </Typography>
+        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+         Precio: ${product.price}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -39,10 +32,12 @@ export default function CardBuy({ name, image, addToCart }: CardBuyProps) {
         <IconButton aria-label="share">
           <ShareIcon />
         </IconButton>
-        <button className="button-comprar" onClick={() => addToCart({ name, image })}>
+        <button className="button-comprar" onClick={() => addToCart(product)}>
           Comprar
         </button>
       </CardActions>
     </Card>
   );
-}
+};
+
+export default CardBuy;
