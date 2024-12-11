@@ -1,11 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import useCartStore from '../../store/UseCartStore';
+import Badge from '@mui/material/Badge'; 
 
 const Header = () => {
+    const cart = useCartStore((state) => state.cart);
+        const totalItems = cart.reduce((acc, product) => acc + product.quantity, 0);
+
     return (
         <header className="bg-dark">
             {/* Navbar */}
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark"> 
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container-fluid">
                     <Link className="navbar-brand text-uppercase font-weight-bold" to="/">Vendemos vehículos</Link>
 
@@ -18,6 +24,14 @@ const Header = () => {
                     {/* Enlaces del menú */}
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                            <li className="nav-item pt-1 mr-4">
+                                <Badge badgeContent={totalItems} color="primary" className=''>
+                                    <Link  to="/cart">
+                                        <ShoppingCartIcon color="success" />
+                                    </Link>
+                                </Badge>
+                            </li>
                             <li className="nav-item">
                                 <Link className="nav-link active text-white" aria-current="page" to="/">Inicio</Link>
                             </li>

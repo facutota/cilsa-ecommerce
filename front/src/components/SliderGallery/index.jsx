@@ -1,27 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, EffectFade, EffectCube, EffectCoverflow } from 'swiper/modules';
+import { Navigation, Pagination, EffectCoverflow } from 'swiper/modules';
+import useCartStore from '../../store/UseCartStore';
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import 'swiper/css/effect-cube';  // Importante: importar los estilos del efecto
+import 'swiper/css/effect-cube'; 
+import { Button } from '@mui/material';
+import API_URL from '../../config/api';
 
-interface Product {
-  id: number;
-  name: string;
-  image: string;
-}
+const SliderGallery = () => {
+  const [products, setProducts] = useState([]); // Estado para almacenar los productos
+  const addToCart = useCartStore((state) => state.addToCart);
 
-const products: Product[] = [
-  { id: 1, name: 'Producto 1', image: '/images/avion.jpg' },
-  { id: 2, name: 'Producto 2', image: '/images/moto.jpg' },
-  { id: 3, name: 'Producto 3', image: '/images/tractor.jpeg' },
-  // Añade más productos según sea necesario
-];
+  useEffect(() => {
+    const fetchRandomProducts = async () => {
+      try {
+        const response = await fetch(`${API_URL}/products/random`); 
+        const data = await response.json();
+        setProducts(data); 
+      } catch (error) {
+        console.error('Error al obtener productos aleatorios:', error);
+      }
+    };
 
-const SliderGallery: React.FC<{ addToCart: (product: Product) => void }> = ({ addToCart }) => {
+    fetchRandomProducts();
+  }, []);
+
   return (
     <div className="w-full h-96 flex justify-center">
       <Swiper
@@ -29,6 +36,7 @@ const SliderGallery: React.FC<{ addToCart: (product: Product) => void }> = ({ ad
         grabCursor={true}
         centeredSlides={true}
         slidesPerView={'auto'}
+        initialSlide={2} 
         coverflowEffect={{
           rotate: 50,
           stretch: 0,
@@ -44,9 +52,9 @@ const SliderGallery: React.FC<{ addToCart: (product: Product) => void }> = ({ ad
           <SwiperSlide key={product.id}>
             <div className="product-slide flex flex-col items-center justify-center">
               <img src={product.image} alt={product.name} style={{ width: '100%', height: '500px', objectFit: 'contain' }} />
-              <button className=" button-comprar" onClick={() => addToCart(product)}>
+              <Button variant="contained" onClick={() => addToCart(product)}>
                 Comprar
-              </button>
+              </Button>
             </div>
           </SwiperSlide>
         ))}

@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import useCartStore from '../../store/UseCartStore'; // Asegúrate de que la ruta sea correcta
+import { Button } from '@mui/material';
 
 const CardBuy = ({ product }) => {
   const addToCart = useCartStore((state) => state.addToCart); // Obtén la función addToCart
@@ -32,9 +33,9 @@ const CardBuy = ({ product }) => {
         <IconButton aria-label="share">
           <ShareIcon />
         </IconButton>
-        <button className="button-comprar" onClick={() => addToCart(product)}>
+        <Button variant="contained" onClick={() => addToCart(product)}>
           Comprar
-        </button>
+        </Button>
       </CardActions>
     </Card>
   );

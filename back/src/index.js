@@ -1,14 +1,22 @@
 const express = require('express');
-const pool = require('./config/db'); // Asegúrate de que la ruta sea correcta
-const productRoutes = require('../src/routes/productsRoutes'); // Importa las rutas de productos
+const cors = require('cors'); 
+const pool = require('./config/db'); 
+const productRoutes = require('../src/routes/productsRoutes');
+const cartRoutes = require('./routes/cartRoutes'); 
+
 const app = express();
 const port = process.env.PORT || 3000;
+
+app.use(cors());
+
 
 // Middleware para parsear JSON
 app.use(express.json());
 
 // Usar las rutas de productos
 app.use('/api/products', productRoutes);
+app.use('/api/cart', cartRoutes); 
+
 
 // Probar la conexión a la base de datos
 pool.connect()

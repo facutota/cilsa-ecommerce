@@ -68,6 +68,8 @@ h2 {
   background-color: #2f855a; /* Color de fondo al pasar el mouse (verde más oscuro) */
 }
 
+
+
 .grid-container {
   display: grid; /* Establece el contenedor como un grid */
   grid-template-columns: repeat(3, 1fr); /* Crea 3 columnas de igual ancho */
