@@ -1,8 +1,17 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 
-// https://vite.dev/config/
+
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
 export default defineConfig({
   plugins: [react()],
-  base: '/src', 
-})
+  server: {
+    strictPort: true,
+    // Puedes agregar headers aquí si necesitas asegurar el tipo MIME
+    headers: {
+      'Content-Type': 'application/javascript',
+    },
+  },
+});
