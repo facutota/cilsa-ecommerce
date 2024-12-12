@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
+  base: '/src', 
   server: {
     strictPort: true,
     // Puedes agregar headers aquí si necesitas asegurar el tipo MIME
