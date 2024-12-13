@@ -2,6 +2,11 @@
 
 Este es un proyecto de eCommerce desarrollado con React y Vite. La aplicación permite a los usuarios explorar productos, agregarlos al carrito y realizar compras. Utiliza varias tecnologías modernas para mejorar la experiencia del usuario y la gestión de datos.
 
+## Integrantes
+
+- **Facundo Martin Medina Carranza**
+- **Javier Zubillaga**
+
 ## Tecnologías Utilizadas
 
 - **JavaScript**: Lenguaje de programación principal utilizado en el desarrollo.
