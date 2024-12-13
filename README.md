@@ -6,6 +6,7 @@ Este es un proyecto de eCommerce desarrollado con React y Vite. La aplicación p
 
 - **Facundo Martin Medina Carranza**
 - **Javier Zubillaga**
+- **Veronica Juarez**
 
 ## Tecnologías Utilizadas
 
